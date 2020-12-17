@@ -7,11 +7,13 @@ class Act {
 
     protected int number;
     protected int date;
-    protected String[] goods;
+    protected String[] goods = {"one","two"};
     static int count;
 
     public Act(int number, int date, String[] goods) {
-
+        this.number = number;
+        this.date = date;
+        this.goods = goods;
         count++;
     }
 
@@ -39,11 +41,13 @@ class Agreement {
 
     protected int number;
     protected int date;
-    protected String[] goods;
+    protected String[] goods = {"one","two"};
     static int count;
 
     public Agreement(int number, int date, String[] goods) {
-
+        this.number = number;
+        this.date = date;
+        this.goods = goods;
         count++;
     }
 
@@ -64,12 +68,13 @@ class Agreement {
         return count;
     }
 }
+
 public class Main {
 
     public static void main(String[] args) {
-        Act a = new Act(1,7,);
+        Act a = new Act(1,7, args);
         System.out.println("Now we have " + Act.getCount() + " act");
-        Agreement b = new Agreement(1,7,);
+        Agreement b = new Agreement(1,7, args);
         System.out.println("Now we have " + Agreement.getCount() + " agreement");
     }
 }
